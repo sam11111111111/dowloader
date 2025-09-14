@@ -3,35 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download File</title>
+  <title>Download</title>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+     // margin: 0;
+      //padding: 0;
       background: #f5f5f5;
       font-family: Arial, sans-serif;
+    //  display: flex;
+     // justify-content: center;
+      //align-items: center;
+      min-height: 100vh;
     }
+
+
+
     .download-btn {
+      display: inline-block;
+      margin-top: 8px;
       background: #007bff;
       color: white;
-      padding: 14px 28px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      padding: 10px 14px;
+      font-size: 14px;
+      border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s;
     }
-    .download-btn:hover {
+
+    .download-btn:hover,
+    .download-btn:active {
       background: #0056b3;
     }
+    <style>
+img {
+  border-radius: 100%;
+
+}
+#w{
+  position: absolute;
+  left: 30%;
+  top: 15%;
+}
+#jo{
+
+position: absolute;
+top: 15%;
+}
+#jops{
+  position: absolute;
+  top: 24%;
+  left: 6%;
+
+}
+#apkjo{
+position: absolute;
+top: 29%;
+left: 4%;
+}
+#yoni{
+  position: absolute;
+  top: 24%;
+  left: 31%;
+}
+
   </style>
+
+
+
+
 </head>
 <body>
-  <!-- Change href to your APK or MP3 file -->
+ <center> <h1> SamApp </h1> </center><br>
+
+
+
+
+
+ <h4 id="jops"><b>JO PS</b></h4> 
+  <a href="jo.apk" download ><img src="referee.png" alt="Avatar" style="width:20%" id="jo">
+</a>
+
+
+
+ 
+    <h4 id="yoni"><b>Yoni Store</b></h4> 
+   
+    <a href="app-release.apk" download > <img src="warehouse (1).png" alt="Avatar" style="width:20%" id="w"> 
+</a>
+
+<!--
   <a href="app-release.apk" download class="download-btn">Download APK</a>
-  <!-- Example: <a href="music.mp3" download class="download-btn">Download MP3</a> -->
+   Example: <a href="music.mp3" download class="download-btn">Download MP3</a> -->
 </body>
 </html>
