@@ -103,9 +103,38 @@ color: #49243E;
    
     <a href="Yoni Store.apk" download > <img src="warehouse (1).png" alt="Avatar" style="width:20%" id="w"> 
 </a>
-<a href="Yoni Store.apk" id="yoni">download yonistore</a>
+
+<button  onclick="downloadFile()">download</button>
 <!--
+<a href="Yoni Store.apk" id="yoni">download yonistore</a>
+
   <a href="app-release.apk" download class="download-btn">Download APK</a>
    Example: <a href="music.mp3" download class="download-btn">Download MP3</a> -->
 </body>
+
+
+
+<script>
+    function downloadFile() {
+      // ✅ Change this to your real file URL
+      const fileUrl = "Yoni Store.apk";  
+      const fileName = "Yoni Store.apk";    // the saved file name
+
+      fetch(fileUrl)
+        .then(response => response.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.style.display = "none";
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(() => alert("Download failed! Check the file path."));
+    }
+  </script>
+
+
 </html>
