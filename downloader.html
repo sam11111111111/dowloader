@@ -4,16 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sam App</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&family=Courier+Prime:wght@400;700&family=Lobster&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      background: #D3DAD9;
+      background: #f5f5f5;
       font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     h1 {
       text-align: center;
       padding: 20px;
+      font-family: "Poppins", sans-serif;
     }
 
     .grid {
@@ -21,10 +29,11 @@
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 16px;
       padding: 20px;
+      flex-grow: 1;
     }
 
     .card {
-      background: #F5F5F5;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       text-align: center;
@@ -61,6 +70,14 @@
       background: #0056b3;
     }
 
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
     #sam{
 color: #090040;
 font-family: "Lucida Handwriting", cursive;
@@ -68,34 +85,57 @@ font-family: "Lucida Handwriting", cursive;
     #app{
 color: #AE445A;
     }
+
   </style>
 </head>
 <body>
 
   <h1> <span id="sam">Sam</span><span id="app">App</span></h1>
 
-  <div class="grid">
-    <!-- Example APK Card -->
-    <div class="card">
-      <img src="warehouse (1).png" alt="App 1">
-      <p>Yoni Store</p>
-      <a href="Yoni Store.apk" class="btn" download>📥 Download</a>
-    </div>
-
-    <div class="card">
-      <img src="referee.png" alt="App 2">
-      <p>Jo PS</p>
-      <a href="Jo PS.apk" class="btn" download>📥 Download</a>
-    </div>
-
-    <div class="card">
-      <img src="icon3.png" alt="App 3">
-      <p>App 3</p>
-      <a href="apk/app3.apk" class="btn" download>📥 Download</a>
-    </div>
-
-    <!-- Repeat for all 50 APKs -->
+  <div class="grid" id="apkGrid">
+    <!-- Cards will be injected here -->
   </div>
+
+  <footer>
+    © 2025 Sam App | All rights reserved.
+  </footer>
+
+  <script>
+    const apps = [
+      { name: "Yoni Store", icon: "warehouse (1).png", file: "Yoni Store.apk" },
+      { name: "Jo PS", icon: "referee.png", file: "Jo PS.apk" },
+      { name: "Berea", icon: "berea.jpg", file: "apk/app3.apk" },
+      
+      // 👉 Add up to 50+ APK entries here
+    ];
+
+    const fonts = [
+      "'Cursive', Lucida Handwriting",
+      "'Serif', Georgia",
+      "'Courier Prime', monospace",
+      "'Monospace', Lucida Console",
+      "'Ubuntu', sans-serif"
+    ];
+
+    const grid = document.getElementById("apkGrid");
+
+    apps.forEach(app => {
+      // Pick random font
+      const font = fonts[Math.floor(Math.random() * fonts.length)];
+
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.fontFamily = font;
+
+      card.innerHTML = `
+        <img src="${app.icon}" alt="${app.name}">
+        <p>${app.name}</p>
+        <a href="${app.file}" class="btn" download>📥 Download</a>
+      `;
+
+      grid.appendChild(card);
+    });
+  </script>
 
 </body>
 </html>
