@@ -102,11 +102,11 @@ color: #AE445A;
 
   <script>
     const apps = [
-      { name: "Yoni Store", icon: "warehouse (1).png", file: "Yoni Store.apk" },
-      { name: "Jo PS", icon: "referee.png", file: "Jo PS.apk" },
-      { name: "Berea", icon: "berea.jpg", file: "apk/app3.apk" },
-      { name: "Esoapp", icon: "attendance.png", file: "esoapp.apk" },
-      { name: "Fasil", icon: "attendance (1).png", file: "faisl.apk" },
+      { name: "Yoni Store", icon: "warehouse (1).png", file: "Yoni Store.apk", like:"3 like", download:"4 Download " },
+      { name: "Jo PS", icon: "referee.png", file: "Jo PS.apk" , like:"4 like", download:"6 Download"},
+      { name: "Berea", icon: "berea.jpg", file: "apk/app3.apk", like:"1 like", download:"1 Download" },
+      { name: "Esoapp", icon: "attendance.png", file: "esoapp.apk" , like:"3 like", download:"3 Download"},
+      { name: "Fasil", icon: "attendance (1).png", file: "faisl.apk" , like:"3 like", download:"3 Download"},
       
       // 👉 Add up to 50+ APK entries here
     ];
@@ -132,6 +132,10 @@ color: #AE445A;
       card.innerHTML = `
         <img src="${app.icon}" alt="${app.name}">
         <p>${app.name}</p>
+        <p>${app.like}</p>
+
+        <p>${app.download}</p>
+
         <a href="${app.file}" class="btn" download>📥 Download</a>
       `;
 
